@@ -1,4 +1,3 @@
-
 toggleBody = () => {
     var element = document.body;
     element.classList.toggle('dark-mode');
@@ -15,7 +14,7 @@ toggleGithub = () => {
     });
 
 
-}
+};
 
 toggleLines = () => {
     var elementThree = document.querySelectorAll('hr');
@@ -26,7 +25,7 @@ toggleLines = () => {
     });
 
 
-}
+};
 
 
 
