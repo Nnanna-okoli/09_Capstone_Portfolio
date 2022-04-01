@@ -362,6 +362,13 @@ footer {
   /* ensure the boxes take up exactly 50% in our 2 column layout without breaking to a new line due to the 20px
   total left and right margin we added in the mobile-first code. */
 
+@media (max-width: 600px){
+  a.nav-link {
+      color: #fff;
+      padding: 10px;
+
+  }
+}
   @media (min-width: 1200px) {
 
   .container {
