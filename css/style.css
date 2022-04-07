@@ -1,65 +1,84 @@
 * {
      box-sizing: border-box;
  }
-
-
-
-
-
-
+/* default setting sets all elements to 100% height and no margins space*/
  html, body {
    height: 100%;
    margin: 0;
  }
-
-
+ /*sets container/content div to min 100% height to allow footer to stick to bototm*/
  .content {
    min-height: 100%;
  }
- .content-inside {
-   padding: 20px;
-   padding-bottom: 50px;
- }
- .footer {
-   height: 50px;
-   margin-top: -50px;
- }
-
+/* adds margins to all paragraph text */
  p {
      margin: 15px;
  }
-
-
+/* Aligns all text with the paragraph class centrally and adds spacing below them */
  .paragraph {
    text-align: center;
    padding-bottom: 15px;
-
  }
 
 /* Navbar settings */
 
- nav {
-      background-color: rgba(255, 255, 255, 0.9);
+/* Navbar favicon (hamburger logo) positioned relatively within the nav div and bg color*/
+/* In moobile format i'm center aligning all the contents within the navbar and vertically
+ aligned the content using flex direction column */
+ .navbar {
+   display: flex;
+   flex-direction: column;
       font-family: 'Roboto Mono', monospace;
+      overflow: hidden;
+      position: relative;
+      background-color: #003566;
+      align-items: center;
+      text-align: center;
   }
 
+/*Nav links color to white and spacing around links and remove text underline */
   a.nav-link {
       color: #fff;
       padding: 20px;
-
+      display:block;
+      text-decoration: none;
   }
 
+/* setting the hamburger size color and margins and on hover */
+.fa {
+  font-size: 40px!important;
+  margin: 10px !important;
+  color: #adb5bd !important;
+}
+
+fa:hover {
+  font-size: 40px!important;
+  margin: 10px !important;
+  color: #adb5bd !important;
+}
+
+/* On hover Grey border at bottom for nav menu links */
   a.nav-link:hover {
       border-bottom: 1.5px solid #adb5bd;
       color: white;
-      transition: all 0.3s ease-out;
+      transition: all 2s ease-out;
   }
 
-.navbar {
-  background-color: #003566;
+  /* Style the hamburger menu */
+  .navbar a.icon {
+    display: block;
+    right: 0;
+    top: 0;
+  }
+
+#myLinks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar settings end */
+
 
 /* Header Settings */
 
@@ -126,7 +145,7 @@ header {
 }
 
 .skills ul {
-    display: grid;
+    /*display: grid;*/
     grid-template-columns: repeat(3, 1fr);
     padding-left: 0;
     margin: 15px;
@@ -383,12 +402,30 @@ footer {
   /* ensure the boxes take up exactly 50% in our 2 column layout without breaking to a new line due to the 20px
   total left and right margin we added in the mobile-first code. */
 
-@media (max-width: 600px){
+@media (max-width: 768px){
   a.nav-link {
       color: #fff;
       padding: 20px 10px;
-
   }
+}
+
+@media (min-width: 768px) {
+
+    .fa {
+      display: none !important;
+    }
+
+    #myLinks {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-link:nth-child(odd)  {
+  background-color: #003566;
+}
+
 }
   @media (min-width: 1200px) {
 
@@ -555,5 +592,7 @@ footer {
 }
 
 
+
+}
 
 }

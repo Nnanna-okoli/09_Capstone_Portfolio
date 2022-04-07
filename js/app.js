@@ -29,27 +29,14 @@ toggleLines = () => {
 
 
 
-//// accordions
-
-// This code was an attempt but does not seem to do the job - can/will delete
-
-var sections = document.querySelectorAll('section');
-
-// https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
-window.addEventListener('hashchange', function(event) {
-  removeAllActiveClasses();
-  activateSectionFromHash();
-});
-
-function removeAllActiveClasses() {
-  [].forEach.call(sections, function(element) {
-    element.classList.remove('active');
-  });
-}
-
-function activateSectionFromHash() {
-  // hash starts with #, getElementById searches without
-  document.getElementById(location.hash.substring(1)).classList.add('active');
-}
-
 //
+
+/*Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
